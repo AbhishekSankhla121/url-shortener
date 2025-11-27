@@ -9,9 +9,16 @@ This guide explains how to set up and run the **URL Shortener** application usin
 
 ## 📂 Repository
 
-GitHub Link:  
-👉 **https://github.com/AbhishekSankhla121/url-shortener**
+GitHub Link: 
+root project link: https://github.com/AbhishekSankhla121/url-shortener
+frontend project link: https://github.com/AbhishekSankhla121/urlshortener-frontend**
+backend project link: https://github.com/AbhishekSankhla121/urlshortener-backend
 
+others
+application setup video link: https://drive.google.com/file/d/1CbXuMYEuEpZxcHHVsqCKHjfSZjQ1aOAU/view?usp=sharing
+test-frontend-application link: https://urlshortener-frontend-s5vj.onrender.com
+test-backend-application link: https://urlshortener-backend-8oji.onrender.com
+Candidate ID: Naukri1125
 ---
 
 ## 🛠️ Requirements
