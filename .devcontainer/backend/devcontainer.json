@@ -1,6 +1,6 @@
 {
     "name": "Cognitute Application",
-    "dockerComposeFile": "./compose.yaml",
+    "dockerComposeFile": "../compose.yaml",
     "service": "url-backend",
     "workspaceFolder": "/workspace/urlshortener-backend",
     "shutdownAction": "none",

@@ -1,10 +1,10 @@
 services:
   url-backend:
     build:
-      context: "../../urlshortener-backend/"
+      context: "../urlshortener-backend/"
       dockerfile: 'Dockerfile'
     volumes:
-      - ../..:/workspace:cached
+      - ..:/workspace:cached
     command: sleep infinity
     networks:
       - team-alpha
@@ -13,7 +13,9 @@ services:
     depends_on:
       - mongo
     environment:
-      - PORT:5000
+      - PORT=5000
+      - DATABASE_CONNECTION_STRING=mongodb://admin:admin@mongo:27017/abhishek?authSource=admin
+      - FRONTEND_URL=http://localhost:3000
 
   mongo:
     image: mongo
