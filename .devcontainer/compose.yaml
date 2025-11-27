@@ -5,6 +5,7 @@ services:
       dockerfile: 'Dockerfile'
     volumes:
     - ../urlshortener-backend:/app:cached
+    - backend_node_modules:/app/node_modules
     command: ["npx","nodemon", "index.js", "--legacy-watch"]
     networks:
       - team-alpha
@@ -23,6 +24,7 @@ services:
       dockerfile: 'Dockerfile'
     volumes:
       - ../urlshortener-frontend:/usr/src/urlshortener-frontend:cached
+      - urlshortener_node_modules:/usr/src/urlshortener-frontend/node_modules
     networks:
       - team-alpha
     ports:
@@ -31,7 +33,7 @@ services:
       - url-backend
     environment:
       - CHOKIDAR_USEPOLLING=true 
-    command: ["npm", "start"]
+    # command: sh -c "npm install && npm start"
   
 
   mongo:
@@ -64,3 +66,7 @@ services:
 networks:
   team-alpha:
     driver: bridge
+
+volumes:
+  urlshortener_node_modules:
+  backend_node_modules:
