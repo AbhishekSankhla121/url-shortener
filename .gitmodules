@@ -3,4 +3,4 @@
 	url = https://github.com/AbhishekSankhla121/urlshortener-frontend
 [submodule "urlshortener-backend"]
 	path = urlshortener-backend
-	url = https://github.com/AbhishekSankhla121/urlshortener-backend
+	url = https://github.com/AbhishekSankhla121/urlshortener-backend.git
