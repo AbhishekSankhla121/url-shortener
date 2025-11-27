@@ -1,15 +1,15 @@
 {
-    "name": "Cognitute Application",
+    "name": "backend Application",
     "dockerComposeFile": "../compose.yaml",
     "service": "url-backend",
-    "workspaceFolder": "/workspace/urlshortener-backend",
+    "workspaceFolder":  "/app",
     "shutdownAction": "none",
     "forwardPorts": [
-        3000,
-        5432,
         5000,
         5050,
-        6379
+        6379,
+        27017,
+        8081
     ],
     "customizations": {
         "vscode": {

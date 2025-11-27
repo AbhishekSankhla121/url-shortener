@@ -4,8 +4,8 @@ services:
       context: "../urlshortener-backend/"
       dockerfile: 'Dockerfile'
     volumes:
-      - ..:/workspace:cached
-    command: sleep infinity
+    - ../urlshortener-backend:/app:cached
+    command: ["npx","nodemon", "index.js", "--legacy-watch"]
     networks:
       - team-alpha
     ports:
@@ -16,6 +16,23 @@ services:
       - PORT=5000
       - DATABASE_CONNECTION_STRING=mongodb://admin:admin@mongo:27017/abhishek?authSource=admin
       - FRONTEND_URL=http://localhost:3000
+
+  url-frontend:
+    build:
+      context: "../urlshortener-frontend/"
+      dockerfile: 'Dockerfile'
+    volumes:
+      - ../urlshortener-frontend:/usr/src/urlshortener-frontend:cached
+    networks:
+      - team-alpha
+    ports:
+      - "3000:3000"
+    depends_on:
+      - url-backend
+    environment:
+      - CHOKIDAR_USEPOLLING=true 
+    command: ["npm", "start"]
+  
 
   mongo:
     image: mongo
